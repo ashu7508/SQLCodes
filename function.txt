@@ -1,0 +1,141 @@
+[21:16, 8/13/2023] 🄰🅂🄷🅄🅃🄾🅂🄷: Ajay Sharma:
+WITH dept (department,Salary) AS ( 
+ 
+   SELECT Department, sum(Salary) as Salary 
+ 
+FROM employee 
+ 
+GROUP BY department 
+ 
+) 
+ 
+  
+ 
+SELECT * FROM dept WHERE Salary > '10000';
+
+CREATE PROCEDURE usp_dept1 
+ 
+@name varchar(40) 
+ 
+AS 
+ 
+BEGIN 
+ 
+  
+ 
+select salary from Employee where Name=@name 
+ 
+  
+ 
+END 
+ 
+GO
+
+create table Products 
+ 
+(productID int primary key, 
+ 
+ProductName varchar(50), 
+ 
+price decimal , 
+ 
+Quantity int) 
+ 
+  
+ 
+insert into Products(productID, 
+ 
+ProductName,price,Quantity) 
+ 
+Values(1,'Chai',40,20), 
+ 
+(2,'Biscut',5.50,200), 
+ 
+(3,'Rust',10,150), 
+ 
+(4,'sugar',24.50,20), 
+ 
+(5,'Coffee',78.20,10)
+
+CREATE FUNCTION CalculateTotal 
+ 
+(@Price decimal(10,2),@Quantity int) 
+ 
+RETURNS decimal(10,2) 
+ 
+AS 
+ 
+BEGIN 
+ 
+   RETURN @Price * @Quantity 
+ 
+END 
+ 
+  
+ 
+Step 3: Call the Function using dbo.CalculateTotal( ): 
+ 
+  
+ 
+SELECT ProductName,Quantity,price,dbo.CalculateTotal(Price, Quantity) AS Total FROM Products
+
+SELECT CONCAT('A', ' B', '          C');  
+ 
+Go 
+ 
+CREATE TABLE CUSTOMERS( 
+ 
+   ID INT NOT NULL, 
+ 
+   NAME VARCHAR (20) NOT NULL, 
+ 
+   AGE INT NOT NULL, 
+ 
+   ADHARCARD_ID BIGINT, 
+ 
+   MOBILE_NO BIGINT, 
+ 
+   ADDRESS CHAR (25) , 
+ 
+   SALARY DECIMAL (18, 2),        
+ 
+   CONSTRAINT CK_CUSTOMERS PRIMARY KEY (ADHARCARD_ID, MOBILE_NO) 
+ 
+);
+
+CREATE TABLE Meals(MealName VARCHAR(100)) 
+ 
+CREATE TABLE Drinks(DrinkName VARCHAR(100)) 
+ 
+INSERT INTO Drinks 
+ 
+VALUES('Orange Juice'), ('Tea'), ('Cofee') 
+ 
+INSERT INTO Meals 
+ 
+VALUES('Omlet'), ('Fried Egg'), ('Sausage') 
+ 
+SELECT * 
+ 
+FROM Meals; 
+ 
+SELECT * 
+ 
+FROM Drinks 
+ 
+  
+ 
+  
+ 
+SELECT * FROM Meals  
+ 
+CROSS JOIN Drinks
+[21:54, 8/13/2023] 🄰🅂🄷🅄🅃🄾🅂🄷: CREATE NONCLUSTERED INDEX [NCI_NAME_GENDER] ON [dbo].[Employee] 
+ 
+( 
+ 
+ [Name] ASC, 
+ 
+ [Gender] ASC 
+ 
+)
